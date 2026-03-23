@@ -17,8 +17,8 @@ public class ClienteController {
     ClienteService clienteService;
 
     @PostMapping
-    public ResponseEntity<ClienteModel> create(ClienteModel clienteModel){
-        ClienteModel request = clienteService.create(clienteModel);
+    public ResponseEntity<ClienteModel> createCliente(@RequestBody ClienteModel clienteModel){
+        ClienteModel request = clienteService.createCliente(clienteModel);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}").buildAndExpand(clienteModel.getId()).toUri();
         return ResponseEntity.created(uri).body(request);

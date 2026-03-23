@@ -13,7 +13,7 @@ public class ClienteService {
     @Autowired
     ClienteRepository clienteRepository;
 
-    public ClienteModel create(ClienteModel clienteModel){
+    public ClienteModel createCliente(ClienteModel clienteModel){
         return clienteRepository.save(clienteModel);
     }
 
